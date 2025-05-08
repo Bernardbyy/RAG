@@ -49,3 +49,6 @@ logs/
 # Other
 .cache/
 data/
+
+system architecture.png
+sys_arch_plantumt.txt
