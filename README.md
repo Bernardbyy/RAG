@@ -37,10 +37,6 @@ CelcomDigi Knowledge Assistant is an AI-powered RAG (Retrieval-Augmented Generat
    ```
 
 2. **Create and activate a virtual environment:**
-   ```yaml
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
 
 3. **Install required packages:**
    ```yaml
