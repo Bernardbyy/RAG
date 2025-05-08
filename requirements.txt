@@ -1,0 +1,18 @@
+# Core dependencies
+langchain
+langchain-core
+
+# Document processing
+PyPDF2
+
+# Embeddings
+sentence-transformers
+langchain-huggingface
+
+# Vector database
+chromadb
+langchain-chroma
+
+# LLM
+langchain-ollama
+ollama
