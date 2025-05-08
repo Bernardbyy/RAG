@@ -1,18 +1,34 @@
-# Core dependencies
-langchain
-langchain-core
+# Core dependencies (used across multiple files)
+langchain==0.3.25
+langchain-core==0.3.58
 
-# Document processing
-PyPDF2
+# document_processing/processor.py
+pypdfium2==4.30.1
+pytesseract==0.3.13
+Pillow==11.2.1
+PyPDF2==3.0.1
+langchain-text-splitters==0.3.8
 
-# Embeddings
-sentence-transformers
-langchain-huggingface
+# embeddings/embedder.py
+sentence-transformers==4.1.0
+langchain-huggingface==0.1.2
+chromadb==0.6.3
+langchain-chroma==0.2.3
 
-# Vector database
-chromadb
-langchain-chroma
+# llm/llm_interface.py
+langchain-ollama==0.3.2
+ollama==0.4.8
+transformers==4.51.3
 
-# LLM
-langchain-ollama
-ollama
+# retrieval/retriever.py
+langchain-chroma==0.2.3
+
+# app.py
+streamlit==1.45.0
+
+# evaluation/evaluation.py
+numpy==2.2.5
+tqdm==4.67.1
+
+# General utilities
+tqdm==4.67.1

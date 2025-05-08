@@ -62,20 +62,14 @@ def clean_response(response):
     
     return cleaned
 
-# Function to extract thinking from response
+# Function to extract <think>...</think> block (including tags)
 def extract_thinking(response):
-    # Try to extract <think>...</think> tags
-    think_tags = re.search(r'<think>(.*?)</think>', response, flags=re.DOTALL)
+    # Extract <think>...</think> including the tags
+    think_tags = re.search(r'(<think>.*?</think>)', response, flags=re.DOTALL)
     if think_tags:
         return think_tags.group(1).strip()
     
-    # Try to extract **Thinking** or ## Thinking sections
-    thinking_section = re.search(r'(?i)(\*\*|\#\#?\s*)Thinking:?.*?(\*\*|\n)(.*?)(?=(\*\*|\#\#?\s*)Answer:?|$)', 
-                               response, flags=re.DOTALL)
-    if thinking_section and thinking_section.group(3):
-        return thinking_section.group(3).strip()
-    
-    # If no explicit thinking section, return empty string
+    # If no <think> block, return empty string
     return ""
 
 # Main app title
@@ -120,7 +114,7 @@ if prompt := st.chat_input("Ask about CelcomDigi products and services..."):
             # 1. FIRST: Retrieve and show sources
             retrieved_docs = retriever.retrieve(prompt, k=3)
             
-            st.markdown("### Source Documents")
+            st.markdown("### Retrieved Source Documents 'Chunks'")
             sources_content = ""
             if retrieved_docs:
                 for i, doc in enumerate(retrieved_docs):
@@ -147,11 +141,11 @@ if prompt := st.chat_input("Ask about CelcomDigi products and services..."):
             
             # 4. SECOND: Show thinking if available
             if thinking:
-                st.markdown("### Thinking Rationale")
+                st.markdown("### Reasoning")
                 st.markdown(thinking)
             
             # 5. THIRD: Show the answer
-            st.markdown("### Answer")
+            st.markdown("### Final Answer")
             st.markdown(clean_answer)
     
     # Add structured response to chat history
