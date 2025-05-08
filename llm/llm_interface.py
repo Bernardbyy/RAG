@@ -6,7 +6,6 @@ It formats the context from retrieved documents and user queries into prompts,
 then gets responses from a locally hosted language model using Ollama.
 '''
 
-
 from langchain_ollama import OllamaLLM
 from langchain.prompts import PromptTemplate
 

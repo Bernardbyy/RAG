@@ -17,3 +17,95 @@ CelcomDigi Knowledge Assistant is an AI-powered RAG (Retrieval-Augmented Generat
 - **Comprehensive Evaluation**: Includes evaluation tools to measure and improve system performance
 
 ## System Architecture
+
+## 🚀 Installation
+
+### ✅ Prerequisites
+
+- Python 3.8+
+- [Ollama](https://ollama.com) installed (for local LLM inference)
+- Tesseract OCR installed (for scanned document processing)
+
+---
+
+### ⚙️ Setup
+
+1. **Clone this repository:**
+   '''bash
+   git clone https://github.com/yourusername/celcomdigi-knowledge-assistant.git
+   cd celcomdigi-knowledge-assistant
+   '''
+
+2. **Create and activate a virtual environment:**
+   '''bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   '''
+
+3. **Install required packages:**
+   '''bash
+   pip install -r requirements.txt
+   '''
+
+4. **Install Ollama:**
+   Follow instructions at [https://ollama.com](https://ollama.com)
+
+   Then pull the required model:
+   '''bash
+   ollama pull qwen3:0.6b
+   '''
+
+5. **Set up Tesseract OCR:**
+   - **Windows**: [Download from UB Mannheim](https://github.com/UB-Mannheim/tesseract/wiki)
+   - **Mac**:  
+     '''bash
+     brew install tesseract
+     '''
+   - **Linux**:  
+     '''bash
+     sudo apt install tesseract-ocr
+     '''
+
+6. **Create a `data/` directory and add your PDFs:**
+   '''bash
+   mkdir -p data
+   # Copy your PDF files into the data directory
+   '''
+
+---
+
+## 🧠 Usage
+
+### ▶️ Running the Application
+
+Start the Streamlit interface:
+'''bash
+streamlit run app.py
+'''
+
+> The web interface will open in your browser (usually at [http://localhost:8501](http://localhost:8501)).
+
+Ask questions about CelcomDigi products and services in natural language.
+
+---
+
+### 🔄 Rebuilding the Vector Store
+
+If you add new documents or want to refresh embeddings:
+'''bash
+python main.py
+'''
+
+---
+
+### 📈 Running Evaluation
+
+Evaluate the system's retrieval performance:
+'''bash
+python -m evaluation.evaluation
+'''
+
+To test different `k` values for top-k retrieval:
+'''bash
+python -m evaluation.evaluation 5
+'''
