@@ -31,10 +31,10 @@ CelcomDigi Knowledge Assistant is an AI-powered RAG (Retrieval-Augmented Generat
 ### ⚙️ Setup
 
 1. **Clone this repository:**
-   '''yaml
+   ```yaml
    git clone https://github.com/yourusername/celcomdigi-knowledge-assistant.git
    cd celcomdigi-knowledge-assistant
-   '''
+   ```
 
 2. **Create and activate a virtual environment:**
    '''yaml
