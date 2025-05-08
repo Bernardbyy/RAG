@@ -18,7 +18,8 @@ CelcomDigi Knowledge Assistant is an AI-powered RAG (Retrieval-Augmented Generat
 
 ## System Architecture
 
-https://github.com/Bernardbyy/RAG/blob/main/system%20architecture.png?raw=true
+![system architecture](https://github.com/user-attachments/assets/b5426354-68fd-423a-b9be-a0f75a5d35e4)
+
 
 ## Installation
 
