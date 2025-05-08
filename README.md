@@ -31,19 +31,19 @@ CelcomDigi Knowledge Assistant is an AI-powered RAG (Retrieval-Augmented Generat
 ### ⚙️ Setup
 
 1. **Clone this repository:**
-   '''bash
+   '''yaml
    git clone https://github.com/yourusername/celcomdigi-knowledge-assistant.git
    cd celcomdigi-knowledge-assistant
    '''
 
 2. **Create and activate a virtual environment:**
-   '''bash
+   '''yaml
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    '''
 
 3. **Install required packages:**
-   '''bash
+   '''yaml
    pip install -r requirements.txt
    '''
 
@@ -51,23 +51,23 @@ CelcomDigi Knowledge Assistant is an AI-powered RAG (Retrieval-Augmented Generat
    Follow instructions at [https://ollama.com](https://ollama.com)
 
    Then pull the required model:
-   '''bash
+   '''yaml
    ollama pull qwen3:0.6b
    '''
 
 5. **Set up Tesseract OCR:**
    - **Windows**: [Download from UB Mannheim](https://github.com/UB-Mannheim/tesseract/wiki)
    - **Mac**:  
-     '''bash
+     '''yaml
      brew install tesseract
      '''
    - **Linux**:  
-     '''bash
+     '''yaml
      sudo apt install tesseract-ocr
      '''
 
 6. **Create a `data/` directory and add your PDFs:**
-   '''bash
+   '''yaml
    mkdir -p data
    # Copy your PDF files into the data directory
    '''
@@ -79,7 +79,7 @@ CelcomDigi Knowledge Assistant is an AI-powered RAG (Retrieval-Augmented Generat
 ### ▶️ Running the Application
 
 Start the Streamlit interface:
-'''bash
+'''yaml
 streamlit run app.py
 '''
 
@@ -92,7 +92,7 @@ Ask questions about CelcomDigi products and services in natural language.
 ### 🔄 Rebuilding the Vector Store
 
 If you add new documents or want to refresh embeddings:
-'''bash
+'''yaml
 python main.py
 '''
 
@@ -101,11 +101,11 @@ python main.py
 ### 📈 Running Evaluation
 
 Evaluate the system's retrieval performance:
-'''
+'''yaml
 python -m evaluation.evaluation
 '''
 
 To test different `k` values for top-k retrieval:
-'''
+'''yaml
 python -m evaluation.evaluation 5
 '''
