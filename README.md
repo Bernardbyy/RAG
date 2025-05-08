@@ -18,9 +18,9 @@ CelcomDigi Knowledge Assistant is an AI-powered RAG (Retrieval-Augmented Generat
 
 ## System Architecture
 
-## 🚀 Installation
+## Installation
 
-### ✅ Prerequisites
+### Prerequisites
 
 - Python 3.8+
 - [Ollama](https://ollama.com) installed (for local LLM inference)
@@ -37,40 +37,32 @@ CelcomDigi Knowledge Assistant is an AI-powered RAG (Retrieval-Augmented Generat
    ```
 
 2. **Create and activate a virtual environment:**
-   '''yaml
+   ```yaml
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
-   '''
+   ```
 
 3. **Install required packages:**
-   '''yaml
+   ```yaml
    pip install -r requirements.txt
-   '''
+   ```
 
 4. **Install Ollama:**
    Follow instructions at [https://ollama.com](https://ollama.com)
 
    Then pull the required model:
-   '''yaml
+   ```yaml
    ollama pull qwen3:0.6b
-   '''
+   ```
 
 5. **Set up Tesseract OCR:**
    - **Windows**: [Download from UB Mannheim](https://github.com/UB-Mannheim/tesseract/wiki)
-   - **Mac**:  
-     '''yaml
-     brew install tesseract
-     '''
-   - **Linux**:  
-     '''yaml
-     sudo apt install tesseract-ocr
-     '''
 
 6. **Create a `data/` directory and add your PDFs:**
-   '''yaml
+   ```yaml
    mkdir -p data
    # Copy your PDF files into the data directory
-   '''
+   ```
 
 ---
 
@@ -79,9 +71,9 @@ CelcomDigi Knowledge Assistant is an AI-powered RAG (Retrieval-Augmented Generat
 ### ▶️ Running the Application
 
 Start the Streamlit interface:
-'''yaml
+```yaml
 streamlit run app.py
-'''
+```
 
 > The web interface will open in your browser (usually at [http://localhost:8501](http://localhost:8501)).
 
@@ -92,20 +84,20 @@ Ask questions about CelcomDigi products and services in natural language.
 ### 🔄 Rebuilding the Vector Store
 
 If you add new documents or want to refresh embeddings:
-'''yaml
+```yaml
 python main.py
-'''
+```
 
 ---
 
 ### 📈 Running Evaluation
 
 Evaluate the system's retrieval performance:
-'''yaml
+```yaml
 python -m evaluation.evaluation
-'''
+```
 
 To test different `k` values for top-k retrieval:
-'''yaml
+```yaml
 python -m evaluation.evaluation 5
-'''
+```
