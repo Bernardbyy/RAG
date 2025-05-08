@@ -101,11 +101,11 @@ python main.py
 ### 📈 Running Evaluation
 
 Evaluate the system's retrieval performance:
-'''bash
+'''
 python -m evaluation.evaluation
 '''
 
 To test different `k` values for top-k retrieval:
-'''bash
+'''
 python -m evaluation.evaluation 5
 '''
